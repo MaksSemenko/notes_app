@@ -1,15 +1,24 @@
+{% load static %}
+{% load django_bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
-
-{% load static %}
-<link rel="stylesheet" href="{% static 'notes/style.css' %}">
-
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{% static 'notes/images/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/css/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
 <body>
-    <h1>My Notes</h1>
-    <ul>
-        <li>Note 1</li>
-        <li>Note 2</li>
-        <li>Note 3</li>
-    </ul>
+    <header>
+      <nav>
+          <h2><a href="{% url 'homepage' %}">My Notes</a></h2>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      &copy 2023 MyNoteApp. All rights not reserved.
+    </footer>
 </body>
 </html>
