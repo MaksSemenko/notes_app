@@ -1,9 +1,13 @@
 {% extends 'notes/index.html' %}
+<<<<<<< HEAD
+=======
+{% load django_bootstrap5 %}
+>>>>>>> tmp
 
 {% block content %}
     <form method="post">
         {% csrf_token %}
-        <div id="note_title">
+        <div id="note_title" >
             {{ note_form.title.label_tag }}
             {{ note_form.title }}
         </div>
@@ -19,7 +23,7 @@
             {{ note_form.reminder.label_tag }}
             {{ note_form.reminder }}
         </div>
-        <button type="submit" class="btn btn-outline-primary btn-with-margin">Save Note</button>
+        <button type="submit" class="btn btn-primary">Save Note</button>
     </form>
 
 {% endblock %}

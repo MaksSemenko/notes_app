@@ -1,110 +1,94 @@
 body {
-  background-color: #dae4e5;
+	background-color: beige;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
 }
-
-h2, h3, p {
-  color: #2b4a4a;
-  margin-left: 30px;
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 2px;
+	text-align: center;
 }
-
-li {
-  color: #296e6b;
-  margin-left: 10px;
+h1 {
+	margin: 0;
+	font-size: 36px;
+	text-transform: uppercase;
 }
-
+nav {
+	background-color: #ddd;
+	padding: 10px;
+}
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul li {
+	display: inline-block;
+	margin-right: 10px;
+}
+nav ul li a {
+	color: #333;
+	text-decoration: none;
+	padding: 10px;
+}
+nav ul li a:hover {
+	background-color: #333;
+	color: #fff;
+}
+main {
+	padding: 20px;
+	text-align: center;
+}
+h2 {
+	font-size: 28px;
+	margin-top: 0;
+	text-transform: uppercase;
+}
+h3 {
+	font-size: 30px;
+	color: #333333;
+}
+p {
+	font-size: 20px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
 footer {
-  color: #2b4a4a;
-  margin-top: 30px;
-  margin-left: 30px;
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
-
-.btn-with-margin {
-  margin-left: 30px;
-  margin-top: 10px;
-}
-
-text::placeholder {
-    margin-left: 30px;
-}
-
-#searchbar form {
-    margin-left: 30px;
-}
-
-#searchbar input::placeholder {
-    font-weight: bold;
-    opacity: 0.5;
-    color: #296e6b;
-}
-
-#searchbar input {
-    color: #2b4a4a;
-}
-
-#filter form {
-    margin-left: 30px;
-    margin-top: -10px;
-    color: #2b4a4a;
-}
-
-#filter p {
-    margin-top: 20px;
-    color: #2b4a4a;
-    font-size: medium;
-    font-weight: bold;
-}
-
-#filter input {
-    color: #2b4a4a;
-    font-size: small;
-}
-
-#filter label {
-    color: #2b4a4a;
-    font-size: small;
-}
-
-#filter select {
-    color: #2b4a4a;
-}
-
-
-textarea {
-    margin-left: 30px;
-    margin-top: 10px;
-    width: 80%;
-    height: 100px;
-    color: #2b4a4a;
-}
-
-.form-group {
-    margin-left: 30px;
-    margin-top: 10px;
-}
-
-#note_title {
-    margin-left: 30px;
-    margin-bottom: 10px;
-    color: #2b4a4a;
-}
-
 #note_element {
     margin-left: 30px;
     margin-bottom: 10px;
-    color: #2b4a4a;
+    color: #222222;
 }
-
-#note_title input {
-    margin-left: 33px;
-    width: 80%;
+#note_title {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: #222222;
 }
-
-#note_element textarea {
-    margin-left: 35px;
-    width: 80%;
+#filter {
+    margin-left: 30px;
+    margin-bottom: 10px;
+	padding: 80px;
+    color: #222222;
 }
-
-#note_element select {
-    margin-left: 5px;
+.list-group-item {
+	position: center;
+	background-color: beige;
+	width: 95%;
 }
 

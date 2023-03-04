@@ -1,10 +1,5 @@
 {% extends 'notes/index.html' %}
 
-{% block title %}
-    Filtered notes
-{%  endblock %}
-
-
 {% block content %}
     <h3>
         Notes
@@ -25,7 +20,7 @@
     </h3>
     <ul>
       {% for note in notes %}
-        <li><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>
+        <li class="list-group-item"><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>
       {% empty %}
           <p style="margin-left: -10px">No notes found!</p>
       {% endfor %}

@@ -13,7 +13,7 @@ def home(request):
     notes_list = get_list_or_404(Note.objects.order_by('-created_date'))
     categories_list = get_list_or_404(Category.objects.order_by('-title'))
     context = {'notes_list': notes_list, 'categories_list': categories_list}
-    return render(request, 'notes/home.html', context)
+    return render(request, 'notes/homepage.html', context)
 
 
 def note_detail(request, note_id):
@@ -74,7 +74,8 @@ def edit_note(request, note_id):
 def delete_note(request, note_id):
     note = get_object_or_404(Note, pk=note_id)
     note.delete()
-    return redirect('homepage')
+    return redirect('home')
+
 
 
 def search_notes(request):
@@ -104,4 +105,4 @@ def filtered_results(request):
         notes = notes.filter(reminder__lte=end_date)
 
     context = {'notes': notes, 'start_date': start_date, 'end_date': end_date, 'category': category}
-    return render(request, 'notes/filtered_results.html', context)
+    return render(request, 'notes/filtered.html', context)

@@ -15,7 +15,6 @@ class Note(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     upd_date = models.DateTimeField(auto_now=True)
     reminder = models.DateTimeField(null=True, blank=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='notes', null=True, blank=True)
 
     def __str__(self):

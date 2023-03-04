@@ -1,27 +1,23 @@
 {% extends 'notes/index.html' %}
 
-{% block title %}
-    {{ note.title }}
-{%  endblock %}
-
 {% block content %}
     <h3>{{ note.title }}</h3>
     <label for="note_text">
-        <textarea id="note_text" name="note_text" rows="10" cols="50" readonly>{{ note.text }}</textarea>
+        <textarea id="note_text" name="note_text" rows="10" cols="70" readonly>{{ note.text }}</textarea>
     </label>
     <p>
-        note created: {{ note.created_date }}<br>
-        last updated: {{ note.upd_date }}<br>
+        created: {{ note.created_date }}<br>
+        updated: {{ note.upd_date }}<br>
     </p>
 
     <a href="{% url 'edit_note' note.id %}">
-        <button type="button" class="btn btn-outline-danger btn-with-margin">Edit note</button>
+        <button type="button" class="btn btn-dark btn-lg btn-block">Edit note</button>
     </a><br>
     <a href="{% url 'delete_note' note.id %}">
-        <button type="button" class="btn btn-outline-danger btn-with-margin">Delete note</button>
+        <button type="button" class="btn btn-danger btn-lg btn-block">Delete note</button>
     </a>
 
-    <p style="font-style: italic ">
+    <p>
         {% if note.category != None %}
             Category: <a href="{% url 'category_detail' note.category_id %}">{{ note.category.title.lower }}</a>
         {% else %}
