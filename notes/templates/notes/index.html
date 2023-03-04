@@ -1,15 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-{% load static %}
-<link rel="stylesheet" href="{% static 'notes/style.css' %}">
-
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="{% static 'notes/images/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/css/style.css' %}">
+</head>
 <body>
-    <h1>My Notes</h1>
-    <ul>
-        <li>Note 1</li>
-        <li>Note 2</li>
-        <li>Note 3</li>
-    </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'new_note' 0 %}">New note</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+              <li>
+                  <form class="form-inline" action={% url 'search_notes' %}>
+                    <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search for notes" aria-label="Search">
+                      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+      &copy 2023 NotesApp. All rights and your soul are mine.
+    </footer>
 </body>
 </html>
