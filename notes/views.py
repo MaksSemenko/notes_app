@@ -77,7 +77,6 @@ def delete_note(request, note_id):
     return redirect('home')
 
 
-
 def search_notes(request):
     query = request.GET.get('query')
     notes = Note.objects.filter(Q(title__icontains=query))

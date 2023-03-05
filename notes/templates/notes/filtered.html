@@ -22,7 +22,7 @@
       {% for note in notes %}
         <li class="list-group-item"><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>
       {% empty %}
-          <p style="margin-left: -10px">No notes found!</p>
+        <p style="margin-left: -10px">No notes found!</p>
       {% endfor %}
     </ul>
 {% endblock %}
