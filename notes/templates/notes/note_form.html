@@ -1,26 +1,11 @@
 {% extends 'notes/index.html' %}
-{% load django_bootstrap5 %}
 
 
 {% block content %}
+{% load crispy_forms_tags %}
     <form method="post">
         {% csrf_token %}
-        <div id="note_title" >
-            {{ note_form.title.label_tag }}
-            {{ note_form.title }}
-        </div>
-        <div id="note_element">
-            {{ note_form.text.label_tag }}
-            {{ note_form.text }}
-        </div>
-        <div id="note_element">
-            {{ note_form.category.label_tag }}
-            {{ note_form.category }}
-        </div>
-        <div id="note_element">
-            {{ note_form.reminder.label_tag }}
-            {{ note_form.reminder }}
-        </div>
+        {{ note_form|crispy }}
         <button type="submit" class="btn btn-primary">Save Note</button>
     </form>
 
