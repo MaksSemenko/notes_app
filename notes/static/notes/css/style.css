@@ -37,6 +37,9 @@ nav ul li a:hover {
 	background-color: #333;
 	color: #fff;
 }
+span {
+	color: white;
+}
 main {
 	padding: 20px;
 	text-align: center;

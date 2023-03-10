@@ -17,7 +17,7 @@
                 <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'new_note' 0 %}">New note</a>
+                <a class="nav-link" href="{% url 'new_note' %}">New note</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'categories' %}">Categories</a>
@@ -28,6 +28,26 @@
                   </form>
               </li>
             </ul>
+              <ul class="navbar-nav">
+                  {% if user.is_authenticated %}
+                    <li>
+                        <span class="navbar-text">Hello, {{ user.username }}!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                    </li>
+                  {% else %}
+                    <li>
+                        <span class="navbar-text">You are not logged in</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registration' %}">Register</a>
+                    </li>
+                  {% endif %}
+              </ul>
           </div>
         </nav>
     </header>
@@ -35,6 +55,7 @@
         {% block content %}{% endblock %}
     </main>
     <footer>
+        &copy 2023 My Notes App. All rights and your soul are mine.
     </footer>
 </body>
 </html>
